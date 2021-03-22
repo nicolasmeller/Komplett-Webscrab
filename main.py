@@ -4,7 +4,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 l = []
 PATH = 'C:\Program Files (x86)\chromedriver.exe'
-url = 'https://www.komplett.dk/category/10412/hardware/pc-komponenter/grafikkort?nlevel=10000%C2%A728003%C2%A710412&hits=192'
+URL = 'https://www.komplett.dk/category/10412/hardware/pc-komponenter/grafikkort?nlevel=10000%C2%A728003%C2%A710412&hits=192'
 
 class GraphicsCard:
     name = ''
@@ -16,7 +16,7 @@ class GraphicsCard:
 
 def main():
     driver = webdriver.Chrome(PATH)
-    driver.get(url)
+    driver.get(URL)
 
     elements = driver.find_elements_by_class_name('product-list-item')
 
