@@ -4,7 +4,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 l = []
 PATH = 'C:\Program Files (x86)\chromedriver.exe'
-URL = 'https://www.komplett.dk/category/10412/hardware/pc-komponenter/grafikkort?nlevel=10000%C2%A728003%C2%A710412&hits=192'
+URL = 'https://www.komplett.dk/category/10412/hardware/pc-komponenter/grafikkort?nlevel=10000%C2%A728003%C2%A710412&hits=384'
 
 class GraphicsCard:
     name = ''
