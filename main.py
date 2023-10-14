@@ -6,13 +6,15 @@ l = []
 PATH = 'C:\Program Files (x86)\chromedriver.exe'
 URL = 'https://www.komplett.dk/category/10412/hardware/pc-komponenter/grafikkort?nlevel=10000%C2%A728003%C2%A710412&hits=384'
 
+layout = [[sg.Text("Webscrapping -Komplett for Graphicgards",size=(20, 0))], [sg.Button("Start", size=(30, 1))]]
+window = sg.Window("Webscrapping - Komplett", layout)
+
 class GraphicsCard:
     name = ''
     price = ''
 
     def __str__(self):
         return self.name + " - " + self.price
-
 
 def main():
     driver = webdriver.Chrome(PATH)
@@ -38,15 +40,11 @@ def main():
             window.close()
             break
 
-
 def getElementText(element, selector):
     try:
         return element.find_element_by_css_selector(selector).text
     except NoSuchElementException as e:
         return ''
-
-layout = [[sg.Text("Webscrapping Komplett for graphicgards",size=(20, 0))], [sg.Button("Start", size=(30, 1))]]
-window = sg.Window("Webscrapping", layout)
 
 while True:
     event, values = window.read()
@@ -58,5 +56,3 @@ while True:
         window.close()
         main()
         break
-
-
